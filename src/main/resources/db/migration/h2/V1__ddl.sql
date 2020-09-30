@@ -1,0 +1,7 @@
+CREATE TABLE todo (
+  id INT IDENTITY NOT NULL  PRIMARY KEY,
+  name VARCHAR(250) NOT NULL,
+  description VARCHAR(250) NOT NULL,
+  date DATETIME NOT NULL,
+  completed Boolean DEFAULT false
+);
