@@ -25,7 +25,7 @@ import com.redhat.todo.model.Todo;
 import com.redhat.todo.repository.TodoRepository;
 
 @Controller
-@RequestMapping("${openapi.todo.base-path}")
+@RequestMapping("${openapi.todo.base-path:}")
 public class TodosApiController implements TodosApi {
 
     @Autowired
