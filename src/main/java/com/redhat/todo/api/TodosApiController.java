@@ -44,8 +44,11 @@ public class TodosApiController implements TodosApi {
     }
 
     @Override
-    public ResponseEntity<List<Todo>> getTodos(@RequestParam(value = "completed", required = false, defaultValue = "false") @Valid Boolean completed) {
+    public ResponseEntity<List<Todo>> getTodos(@RequestParam(value = "completed", required = false) @Valid Boolean completed) {
         //TODO: Check if completed is null and return all values instead of defaulting it to false
+        if(completed == null) {
+            return ResponseEntity.ok(todoRepository.findAll());
+        }
         return ResponseEntity.ok(todoRepository.getByCompleted(completed));
     }
 
