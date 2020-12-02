@@ -118,6 +118,7 @@ components:
     todo:
       x-java-class-annotation:
         - "@javax.persistence.Entity"
+        - "@javax.persistence.Table(name = \"todo_v2\")"
       title: Todo
       description: Todo List item
       type: object
